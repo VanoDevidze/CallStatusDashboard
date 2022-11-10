@@ -10,7 +10,9 @@ import UIKit
 import SocketIO
 
 class SocketIOManager: NSObject {
+    
     static let sharedInstance = SocketIOManager()
+    
     var socket = SocketIOClient(socketURL: URL(string: "https://sagnew.ngrok.io")!, config: [.log(false), .forcePolling(true)])
     
     override init() {
@@ -34,4 +36,5 @@ class SocketIOManager: NSObject {
     func closeConnection() {
         socket.disconnect()
     }
+    
 }
